@@ -30,7 +30,7 @@
             "JOOMLA_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
             "JOOMLA_DATABASE_NAME": "joomla",
             "JOOMLA_DATABASE_USER": "joomla",
-            "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}"
+            "JOOMLA_DATABASE_PASSWORD": "joomla_password"
           },
           "volumeMounts": {
             "/bitnami/joomla": "joomla-cfs"
