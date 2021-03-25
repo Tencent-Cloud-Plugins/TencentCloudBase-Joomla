@@ -1,0 +1,69 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "Joomla",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "joomla",
+          "servicePath": "/",
+          "uploadType": "image",
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/tcb-joomla/joomla-no-db:3.9.24"
+          },
+          "containerPort": 8080,
+          "customLogs": "stdout,/dev/stdout,/dev/stderr",
+          "envVariables": {
+            "MYSQL_CLIENT_DATABASE_HOST": "{{env.DB_IP}}",
+            "MYSQL_CLIENT_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
+            "MYSQL_CLIENT_DATABASE_ROOT_USER": "root",
+            "MYSQL_CLIENT_DATABASE_ROOT_PASSWORD": "{{env.MYSQL_PASSWORD}}",
+            "MYSQL_CLIENT_CREATE_DATABASE_NAME": "joomla",
+            "MYSQL_CLIENT_CREATE_DATABASE_USER": "joomla",
+            "MYSQL_CLIENT_CREATE_DATABASE_PASSWORD": "joomla_password",
+            "BITNAMI_DEBUG": "true",
+            "ALLOW_EMPTY_PASSWORD": "no",
+            "JOOMLA_DATABASE_TYPE": "mysqli",
+            "JOOMLA_DATABASE_HOST": "{{env.DB_IP}}",
+            "JOOMLA_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
+            "JOOMLA_DATABASE_NAME": "joomla",
+            "JOOMLA_DATABASE_USER": "joomla",
+            "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}"
+          },
+          "volumeMounts": {
+            "/bitnami/joomla": "joomla-cfs"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [{
+        "type": "CFS",
+        "name": "joomla-cfs"
+      }, {
+        "type": "CynosDB",
+        "name": "joomla",
+        "envMap": {
+          "IP": "DB_IP",
+          "PORT": "DB_PORT",
+          "USERNAME": "MYSQL_USERNAME",
+          "PASSWORD": "MYSQL_PASSWORD"
+        }
+      }],
+      "environment": {
+        "JOOMLA_USERNAME": {
+          "description": "后台管理系统管理员账号",
+          "required": true,
+          "default": "admin"
+        },
+        "JOOMLA_PASSWORD": {
+          "description": "后台管理系统管理员密码",
+          "required": true,
+          "default": "admin"
+        }
+      }
+    }
+  }
+}
