@@ -22,7 +22,7 @@
             "MYSQL_CLIENT_DATABASE_ROOT_PASSWORD": "{{env.MYSQL_PASSWORD}}",
             "MYSQL_CLIENT_CREATE_DATABASE_NAME": "joomla",
             "MYSQL_CLIENT_CREATE_DATABASE_USER": "joomla",
-            "MYSQL_CLIENT_CREATE_DATABASE_PASSWORD": "joomla_password",
+            "MYSQL_CLIENT_CREATE_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
             "BITNAMI_DEBUG": "true",
             "ALLOW_EMPTY_PASSWORD": "no",
             "JOOMLA_DATABASE_TYPE": "mysqli",
@@ -30,7 +30,7 @@
             "JOOMLA_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
             "JOOMLA_DATABASE_NAME": "joomla",
             "JOOMLA_DATABASE_USER": "joomla",
-            "JOOMLA_DATABASE_PASSWORD": "joomla_password"
+            "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}"
           },
           "volumeMounts": {
             "/bitnami/joomla": "joomla-cfs"
