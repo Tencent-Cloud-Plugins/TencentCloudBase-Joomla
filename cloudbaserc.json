@@ -31,7 +31,7 @@
             "JOOMLA_DATABASE_NAME": "tcb-joomla",
             "JOOMLA_DATABASE_USER": "tcb-joomla",
             "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}"
-          },
+          }
         }
       }
     },
