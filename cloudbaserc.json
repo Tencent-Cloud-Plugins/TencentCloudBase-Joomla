@@ -30,8 +30,7 @@
             "JOOMLA_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
             "JOOMLA_DATABASE_NAME": "tcb-joomla",
             "JOOMLA_DATABASE_USER": "tcb-joomla",
-            "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
-            "TCB_NOT_SHOW_CYNOS_DB": "{{Outputs.JoomlaCynosDB.Properties.InstanceId}}"
+            "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}"
           },
           "initialDelaySeconds": 10,
           "volumeMounts": {
