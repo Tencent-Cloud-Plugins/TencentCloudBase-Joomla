@@ -31,7 +31,7 @@
             "JOOMLA_DATABASE_NAME": "tcb-joomla",
             "JOOMLA_DATABASE_USER": "tcb-joomla",
             "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
-            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.JoomlaCynosDB.Properties.InstanceId}"
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.joomla.Properties.InstanceId}"
           },
           "initialDelaySeconds": 10,
           "volumeMounts": {
