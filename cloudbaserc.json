@@ -11,7 +11,7 @@
           "servicePath": "/",
           "uploadType": "image",
           "imageInfo": {
-            "imageUrl": "ccr.ccs.tencentyun.com/tcb-joomla/joomla-no-db:3.9.24"
+            "imageUrl": "ccr.ccs.tencentyun.com/tcb-joomla/joomla-no-db:3.9.25"
           },
           "containerPort": 8080,
           "customLogs": "stdout,/dev/stdout,/dev/stderr",
@@ -30,7 +30,8 @@
             "JOOMLA_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
             "JOOMLA_DATABASE_NAME": "tcb-joomla",
             "JOOMLA_DATABASE_USER": "tcb-joomla",
-            "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}"
+            "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.zblog.Properties.InstanceId}"
           },
           "initialDelaySeconds": 10,
           "volumeMounts": {
