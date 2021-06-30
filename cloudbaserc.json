@@ -2,12 +2,12 @@
   "version": "2.0",
   "envId": "{{env.ENV_ID}}",
   "framework": {
-    "name": "Joomla",
+    "name": "Joomla2",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-container",
         "inputs": {
-          "serviceName": "joomla",
+          "serviceName": "joomla2",
           "servicePath": "/",
           "uploadType": "image",
           "imageInfo": {
@@ -31,7 +31,7 @@
             "JOOMLA_DATABASE_NAME": "tcb-joomla",
             "JOOMLA_DATABASE_USER": "tcb-joomla",
             "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
-            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.joomla.Properties.InstanceId}"
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.joomla2.Properties.InstanceId}"
           },
           "initialDelaySeconds": 10,
           "volumeMounts": {
