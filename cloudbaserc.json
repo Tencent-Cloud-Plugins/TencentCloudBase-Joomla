@@ -2,12 +2,12 @@
   "version": "2.0",
   "envId": "{{env.ENV_ID}}",
   "framework": {
-    "name": "Joomlaa",
+    "name": "Joomla",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-container",
         "inputs": {
-          "serviceName": "joomlaa",
+          "serviceName": "joomla",
           "servicePath": "/",
           "uploadType": "image",
           "imageInfo": {
@@ -20,18 +20,18 @@
             "MYSQL_CLIENT_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
             "MYSQL_CLIENT_DATABASE_ROOT_USER": "root",
             "MYSQL_CLIENT_DATABASE_ROOT_PASSWORD": "{{env.MYSQL_PASSWORD}}",
-            "MYSQL_CLIENT_CREATE_DATABASE_NAME": "tcb-joomla",
-            "MYSQL_CLIENT_CREATE_DATABASE_USER": "tcb-joomla",
+            "MYSQL_CLIENT_CREATE_DATABASE_NAME": "tcb-joomla2",
+            "MYSQL_CLIENT_CREATE_DATABASE_USER": "tcb-joomla2",
             "MYSQL_CLIENT_CREATE_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
             "BITNAMI_DEBUG": "true",
             "ALLOW_EMPTY_PASSWORD": "no",
             "JOOMLA_DATABASE_TYPE": "mysqli",
             "JOOMLA_DATABASE_HOST": "{{env.DB_IP}}",
             "JOOMLA_DATABASE_PORT_NUMBER": "{{env.DB_PORT}}",
-            "JOOMLA_DATABASE_NAME": "tcb-joomla",
-            "JOOMLA_DATABASE_USER": "tcb-joomla",
+            "JOOMLA_DATABASE_NAME": "tcb-joomla2",
+            "JOOMLA_DATABASE_USER": "tcb-joomla2",
             "JOOMLA_DATABASE_PASSWORD": "{{env.MYSQL_PASSWORD}}",
-            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.joomlaa.Properties.InstanceId}"
+            "TCB_NOT_SHOW_CYNOS_DB": "${Outputs.joomla.Properties.InstanceId}"
           },
           "initialDelaySeconds": 10,
           "volumeMounts": {
